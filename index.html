@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JRIVERA · Tarjeta Digital</title>
+  <meta name="theme-color" content="#0a0a0a">
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#121212;
+      --muted:#bdbdbd;
+      --gold:#e6b33b; /* dorado sólido */
+      --gold-strong:#f3c248; /* brillo para el logo */
+      --border:#2a2a2a;
+      --shadow:0 30px 80px rgba(0,0,0,.45);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 700px at 50% -10%,rgba(230,179,59,.08),transparent 60%), var(--bg);
+      color:#ececec; font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display:flex; align-items:center; justify-content:center; padding:32px;
+    }
+    .card{
+      width:min(720px, 100%);
+      background:linear-gradient(180deg, rgba(230,179,59,.05), transparent 22%) , var(--panel);
+      border:1px solid var(--border);
+      border-radius:28px; padding:28px; box-shadow:var(--shadow);
+    }
+    .head{display:grid; grid-template-columns:80px 1fr; gap:18px; align-items:center; margin-bottom:8px}
+    .logo{
+      width:80px; height:80px; border-radius:20px;
+      border:1px solid rgba(230,179,59,.6);
+      display:grid; place-items:center;
+      box-shadow:0 0 48px -8px rgba(230,179,59,.45);
+      background:linear-gradient(135deg, rgba(243,194,72,.22), rgba(230,179,59,.08));
+    }
+    .logo span{font-family:Georgia, 'Times New Roman', serif; font-size:40px; letter-spacing:.5px; color:var(--gold-strong); font-weight:700}
+    .brand{display:flex; flex-direction:column}
+    .brand .jriv{font-weight:900; letter-spacing:.06em; color:var(--gold); margin:0 0 2px 0; font-size:22px}
+    .name{font-weight:800; letter-spacing:.02em; margin:0; color:var(--gold)}
+    .role{color:var(--muted); margin-top:6px}
+    .tag{color:var(--muted); margin-top:2px}
+    .panel{
+      border:1px solid var(--border);
+      border-radius:22px; padding:20px; margin-top:20px;
+      background:rgba(0,0,0,.25);
+    }
+    .btn{display:block; width:100%; text-decoration:none; margin:10px 0; }
+    .btn > span{
+      display:flex; align-items:center; justify-content:space-between;
+      border:1px solid rgba(230,179,59,.45);
+      border-radius:16px; padding:16px 18px;
+      color:#f6e7c6; background:rgba(230,179,59,.08);
+      transition:transform .12s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover > span{ transform:translateY(-2px); background:rgba(230,179,59,.14); box-shadow:0 6px 18px rgba(243,194,72,.18) }
+    .btn small{color:var(--muted)}
+    .footer{ text-align:center; margin-top:16px; color:var(--muted); font-size:12px }
+    @media (max-width:520px){
+      .head{ grid-template-columns:64px 1fr }
+      .logo{ width:64px; height:64px; border-radius:16px }
+      .logo span{ font-size:32px }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <header class="head" aria-label="Encabezado JRIVERA">
+      <div class="logo" aria-hidden="true"><span>JR</span></div>
+      <div class="brand">
+        <p class="jriv">JRIVERA</p>
+        <h1 class="name">Juan Alberto Rivera Izaguirre</h1>
+        <div class="role">Ventas y Distribución Mayorista</div>
+        <div class="tag">Atención Personal</div>
+      </div>
+    </header>
+
+    <section class="panel" aria-label="Acciones de contacto">
+      <a class="btn" href="https://wa.me/526679240883?text=Hola%20Juan,%20te%20contacto%20por%20distribuci%C3%B3n%20mayorista." target="_blank" rel="noopener noreferrer">
+        <span><strong>WhatsApp</strong><small>Mensaje directo</small></span>
+      </a>
+      <a class="btn" href="tel:+526679240883">
+        <span><strong>Llamar</strong><small>+52 667 924 0883</small></span>
+      </a>
+      <a class="btn" href="https://www.tiktok.com/@jrivera.cintos" target="_blank" rel="noopener noreferrer">
+        <span><strong>TikTok</strong><small>@jrivera.cintos</small></span>
+      </a>
+    </section>
+
+    <p class="footer">Distribución mayorista con atención directa y confianza.</p>
+  </main>
+</body>
+</html>
