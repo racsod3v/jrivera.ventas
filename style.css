@@ -276,6 +276,8 @@ body {
         padding: 16px;
         background: radial-gradient(400px 450px at 50% -5%, var(--color-body-glow), transparent 70%), var(--bg);
         align-items: flex-start;
+        display: block; 
+        min-height: 0; 
     }
     .card {
         padding: 20px;
