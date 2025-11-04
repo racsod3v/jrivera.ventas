@@ -1,0 +1,346 @@
+:root {
+    /* Variables de Color Base */
+    --color-bg: #0a0a0a;
+    --color-panel-bg: #121212;
+    --color-panel-overlay: rgba(0, 0, 0, 0.25);
+    --color-border-dark: #2a2a2a;
+    --color-white: #ffffff;
+
+    /* Variables de Texto */
+    --color-text-primary: #ececec;
+    --color-text-muted: #bdbdbd;
+    --color-text-gold-pale: #f6e7c6;
+
+    /* Variables "Gold" */
+    --color-gold: #e6b33b;
+    --color-gold-strong: #f3c248;
+    --color-body-glow: rgba(230, 179, 59, 0.4);
+    --color-gold-faint: rgba(230, 179, 59, 0.05);
+    --color-gold-glow-subtle: rgba(230, 179, 59, 0.1);
+    
+    /* Variables del Logo */
+    --color-logo-border: rgba(230, 179, 59, 0.6);
+    --color-logo-shadow: rgba(230, 179, 59, 0.45);
+    --color-logo-grad-light: rgba(243, 194, 72, 0.22);
+    --color-logo-grad-dark: rgba(230, 179, 59, 0.08);
+    
+    /* Variables de Botones */
+    --color-btn-border: rgba(230, 179, 59, 0.3);
+    --color-btn-hover-shadow: rgba(243, 194, 72, 0.2);
+
+    /* Variables de Iconos */
+    --color-icon-whatsapp: #25D366;
+    --color-icon-whatsapp-shadow: rgba(37, 211, 102, 0.5);
+    --color-icon-whatsapp-hover: #2eff7b;
+    --color-icon-whatsapp-shadow-hover: rgba(37, 211, 102, 0.8);
+    /* --color-icon-phone: #007bff;
+    --color-icon-phone-shadow: rgba(0, 123, 255, 0.5);
+    --color-icon-phone-hover: #3395ff;
+    --color-icon-phone-shadow-hover: rgba(0, 123, 255, 0.8); */
+    --color-icon-white-shadow: rgba(255, 255, 255, 0.4);
+    --color-icon-white-shadow-hover: rgba(255, 255, 255, 0.7);
+
+    --bg: var(--color-bg);
+    --panel: var(--color-panel-bg);
+    --muted: var(--color-text-muted);
+    --gold: var(--color-gold);
+    --gold-strong: var(--color-gold-strong);
+    --border: var(--color-border-dark);
+    --shadow: 0 30px 80px rgba(0, 0, 0, .45); 
+    --radius: 22px;
+
+    --new-gold-light: #FFD700;
+    --new-gold-medium: #DAA520;
+    --new-gold-dark: #B8860B;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+
+body {
+    background: radial-gradient(1000px 600px at 50% -10%, var(--color-body-glow), transparent 60%), var(--bg);
+    color: var(--color-text-primary);
+    font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    transition: padding .2s ease;
+}
+
+.card {
+    width: min(720px, 100%);
+    background: linear-gradient(180deg, var(--color-gold-faint), transparent 22%), var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: padding .2s ease;
+}
+
+.head {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 8px
+}
+
+.logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+    border: 1px solid var(--color-logo-border);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 48px -8px var(--color-logo-shadow);
+    background: linear-gradient(135deg, var(--color-logo-grad-light), var(--color-logo-grad-dark));
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px;
+    letter-spacing: .5px;
+    color: var(--gold-strong);
+    font-weight: 700
+}
+
+.brand {
+    display: flex;
+    flex-direction: column
+}
+
+.brand .jriv {
+    font-weight: 900;
+    letter-spacing: .06em;
+    color: var(--gold);
+    margin: 0 0 2px 0;
+    font-size: 22px
+}
+
+.name {
+    font-weight: 800;
+    letter-spacing: .02em;
+    margin: 0;
+    background: linear-gradient(180deg, var(--gold-strong), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 10px var(--color-logo-shadow));
+}
+
+.role {
+    color: var(--muted);
+    margin-top: 6px
+}
+
+.tag {
+    color: var(--muted);
+    margin-top: 2px
+}
+
+.panel {
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 20px;
+    margin-top: 20px;
+    background: var(--color-panel-overlay);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.btn > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    border: 1px solid var(--color-btn-border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    color: var(--muted);
+    background: var(--color-gold-faint);
+    box-shadow: 0 4px 24px var(--color-gold-glow-subtle);
+    transition: all .2s ease;
+}
+
+.btn:hover > span {
+    transform: translateY(-2px);
+    background: var(--color-gold-glow-subtle);
+    box-shadow: 0 8px 30px var(--color-btn-hover-shadow);
+}
+
+.btn small {
+    color: var(--muted)
+}
+
+.footer {
+    text-align: center;
+    margin-top: 24px; 
+    color: var(--muted);
+    font-size: 13px; 
+    line-height: 1.4; 
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn strong {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--color-text-gold-pale);
+}
+
+.btn strong i {
+    font-size: 1.8em;
+    margin-right: 14px;
+    width: 32px;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+/* WhatsApp */
+.btn .fa-whatsapp {
+    color: var(--color-icon-whatsapp);
+    text-shadow: 0 0 16px var(--color-icon-whatsapp-shadow);
+}
+.btn:hover .fa-whatsapp {
+    color: var(--color-icon-whatsapp-hover);
+    text-shadow: 0 0 24px var(--color-icon-whatsapp-shadow-hover);
+}
+
+/* Teléfono */
+.btn .fa-phone {
+    color: var(--color-gold-strong); 
+    text-shadow: 0 0 16px var(--color-logo-shadow);
+}
+.btn:hover .fa-phone {
+    color: var(--color-gold-strong);
+    text-shadow: 0 0 24px var(--color-logo-shadow);
+}
+
+/* TikTok */
+.btn .fa-tiktok {
+    color: var(--color-white);
+    text-shadow: 0 0 16px var(--color-icon-white-shadow);
+}
+.btn:hover .fa-tiktok {
+    text-shadow: 0 0 24px var(--color-icon-white-shadow-hover);
+}
+
+.btn .fa-address-card {
+    color: var(--color-text-muted); /* Color gris pálido */
+    text-shadow: 0 0 16px var(--color-icon-white-shadow);
+}
+.btn:hover .fa-address-card {
+    color: var(--color-white); /* Se vuelve blanco al pasar el ratón */
+    text-shadow: 0 0 24px var(--color-icon-white-shadow-hover);
+}
+
+.btn .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn .details small:empty {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+        background: radial-gradient(400px 450px at 50% -5%, var(--color-body-glow), transparent 70%), var(--bg);
+    }
+    .card {
+        padding: 20px;
+    }
+    .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+    /* .logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+    }
+    .logo span {
+        font-size: 32px;
+    } */
+
+
+    .role, .tag {
+        font-size: 0.95rem;
+        font-weight: bold;
+        color: var(--muted);
+    }
+
+    .btn > span {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 14px 16px;
+    }
+
+    .btn strong {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        font-size: 1.1rem;
+        color: var(--color-text-gold-pale);
+    }
+
+    .btn strong i {
+        font-size: 1.8em;
+        margin-right: 14px;
+        width: 32px;
+        min-width: 32px;
+        height: auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn .details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    .btn .details small {
+        padding-left: 0;
+    }
+    /* --- FIN CAMBIOS CLAVE BOTONES MÓVILES --- */
+}

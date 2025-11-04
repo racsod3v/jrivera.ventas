@@ -6,148 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JRIVERA · Tarjeta Digital</title>
   <meta name="theme-color" content="#0a0a0a">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2BFx/BW9kaIf5Zf5O9L/QAumVAJ/Ygfd+PunSA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-  :root{
-    --bg:#0a0a0a;
-    --panel:#121212;
-    --muted:#bdbdbd;
-    --gold:#e6b33b; /* dorado sólido */
-    --gold-strong:#f3c248; /* brillo para el logo */
-    --border:#2a2a2a;
-    --shadow:0 30px 80px rgba(0,0,0,.45);
-    --radius:22px;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
 
-    /* Nuevos colores para un dorado más vibrante */
-    --new-gold-light: #FFD700; /* Oro puro */
-    --new-gold-medium: #DAA520; /* Goldenrod */
-    --new-gold-dark: #B8860B; /* DarkGoldenrod */
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; background:radial-gradient(1200px 700px at 50% -10%,rgba(230,179,59,.08),transparent 60%), var(--bg);
-    color:#ececec; font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    display:flex; align-items:center; justify-content:center; padding:32px;
-    /* Agregamos una transición suave para el padding */
-    transition: padding .2s ease;
-  }
-  .card{
-    width:min(720px, 100%);
-    background:linear-gradient(180deg, rgba(230,179,59,.05), transparent 22%) , var(--panel);
-    border:1px solid var(--border);
-    border-radius:28px; padding:28px; box-shadow:var(--shadow);
-    transition: padding .2s ease;
-  }
-  .head{display:grid; grid-template-columns:80px 1fr; gap:18px; align-items:center; margin-bottom:8px}
-  .logo{
-    width:80px; height:80px; border-radius:20px;
-    border:1px solid rgba(230,179,59,.6);
-    display:grid; place-items:center;
-    box-shadow:0 0 48px -8px rgba(230,179,59,.45);
-    background:linear-gradient(135deg, rgba(243,194,72,.22), rgba(230,179,59,.08));
-  }
-  .logo span{font-family:Georgia, 'Times New Roman', serif; font-size:40px; letter-spacing:.5px; color:var(--gold-strong); font-weight:700}
-  .brand{display:flex; flex-direction:column}
-  .brand .jriv{font-weight:900; letter-spacing:.06em; color:var(--gold); margin:0 0 2px 0; font-size:22px}
-  .name{font-weight:800; letter-spacing:.02em; margin:0; color:var(--gold)}
-  .role{color:var(--muted); margin-top:6px}
-  .tag{color:var(--muted); margin-top:2px}
-  .panel{
-    border:1px solid var(--border);
-    border-radius:22px; padding:20px; margin-top:20px;
-    background:rgba(0,0,0,.25);
-  }
-  .btn{display:block; width:100%; text-decoration:none; margin:10px 0; }
-  .btn > span{
-  display:flex; align-items:center; justify-content:space-between;
-  border:1px solid rgba(230,179,59,.45);
-  border-radius:16px; padding:16px 18px;
-  color:#f6e7c6; background:rgba(230,179,59,.08);
-  /* Añadimos un pequeño gradiente interno y sombra para dar más "pop" */
-  background: linear-gradient(180deg, rgba(230,179,59,0.05) 0%, rgba(230,179,59,0.0) 100%), var(--panel); /* Panel más oscuro como base, gradiente sutil */
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 2px 4px rgba(0,0,0,0.2); /* Sutil brillo interior y sombra */
-  transition:transform .12s ease, background .2s ease, box-shadow .2s ease, padding .2s ease, gap .2s ease, flex-direction .2s ease;
-}
-.btn:hover > span{
-  transform:translateY(-2px);
-  background:linear-gradient(180deg, rgba(230,179,59,0.1) 0%, rgba(230,179,59,0.03) 100%), var(--panel); /* Más brillo al hover */
-  box-shadow:0 6px 18px rgba(243,194,72,.18), inset 0 1px 0 rgba(255,255,255,0.1);
-}
-
-/* Nuevo estilo para los íconos dentro de los botones */
-.btn > span i {
-  font-size: 1.4em; /* Tamaño del ícono */
-  margin-right: 12px; /* Espacio entre el ícono y el texto */
-  color: var(--gold-strong); /* Color dorado para los íconos */
-  text-shadow: 0 0 8px rgba(243,194,72,.3); /* Sutil sombra dorada */
-}
-  .btn small{color:var(--muted)}
-  .footer{ text-align:center; margin-top:16px; color:var(--muted); font-size:12px }
-
-  /* --- INICIA BLOQUE RESPONSIVE MEJORADO --- */
-  /* Usamos 600px como un punto de corte más estándar, pero 520px también funciona */
-  @media (max-width: 600px){
-    body {
-      padding: 16px; /* 1. Reducir padding del cuerpo */
-    }
-    .card {
-      padding: 20px; /* 2. Reducir padding de la tarjeta */
-    }
-    .head {
-      /* 3. Apilar logo y texto verticalmente */
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Centrar logo y bloque de texto */
-      text-align: center;  /* Centrar el texto (role, tag) */
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .logo {
-      /* 4. Tamaños que ya tenías */
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-    }
-    .logo span {
-      font-size: 32px;
-    }
-    .name {
-      /* 5. Controlar tamaño del H1 para evitar desbordamiento */
-      font-size: 1.3rem; /* ~21px */
-      line-height: 1.2;
-    }
-    .role, .tag {
-      font-size: 0.95rem; /* ~15px */
-    }
-
-    .btn > span {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px; /* Espacio entre el ícono + strong y el small */
-      padding: 14px 16px;
-    }
-    .btn > span i {
-      margin-right: 0; /* Quitar margen a la derecha cuando se apila */
-      margin-bottom: 4px; /* Pequeño margen debajo del ícono si quieres */
-    }
-    .btn strong {
-      display: flex; /* Para que el ícono y el texto fuerte estén en la misma línea */
-      align-items: center;
-    }
-    .footer {
-      font-size: 11px; /* 7. Fuente del pie de página más pequeña */
-    }
-  }
-  /* --- TERMINA BLOQUE RESPONSIVE --- */
-</style>
 </head>
 <body>
   <main class="card" role="main">
     <header class="head" aria-label="Encabezado JRIVERA">
-      <div class="logo" aria-hidden="true"><span>JR</span></div>
+      <!-- <div class="logo" aria-hidden="true"><span>JR</span></div> -->
+      <div class="logo">
+        <img src="img/logo.jpeg" alt="Logo JRIVERA">
+      </div>
       <div class="brand">
-        <p class="jriv">JRIVERA</p>
+        <!-- <p class="jriv">JRIVERA</p> -->
         <h1 class="name">Juan Alberto Rivera Izaguirre</h1>
         <div class="role">Ventas y Distribución Mayorista</div>
         <div class="tag">Atención Personalizada y Profesional</div>
@@ -156,13 +27,40 @@
 
     <section class="panel" aria-label="Acciones de contacto">
       <a class="btn" href="https://wa.me/526673292503?text=Hola%20Juan,%20te%20contacto%20por%20distribuci%C3%B3n%20mayorista." target="_blank" rel="noopener noreferrer">
-          <span><i class="fab fa-whatsapp"></i> <strong>WhatsApp</strong><small>Mensaje directo 667 329 2503</small></span>
+        <span>
+          <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+          <div class="details">
+            <small>Mensaje directo</small>
+            <small>667 329 2503</small>
+          </div>
+        </span>
       </a>
       <a class="btn" href="tel:+526673292503">
-          <span><i class="fas fa-phone"></i> <strong>Llamar</strong><small>+52 667 329 2503</small></span>
+        <span>
+          <strong><i class="fas fa-phone"></i> Llamar</strong>
+          <div class="details">
+            <small></small> 
+            <small>667 329 2503</small>
+          </div>
+        </span>
       </a>
       <a class="btn" href="https://www.tiktok.com/@jrivera.cintos" target="_blank" rel="noopener noreferrer">
-          <span><i class="fab fa-tiktok"></i> <strong>TikTok</strong><small>@jrivera.cintos</small></span>
+        <span>
+          <strong><i class="fab fa-tiktok"></i> TikTok</strong>
+          <div class="details">
+            <small>@jrivera.cintos</small>
+            <small></small> 
+          </div>
+        </span>
+      </a>
+      <a class="btn" href="contacto.vcf" download="Juan Rivera.vcf">
+        <span>
+          <strong><i class="fas fa-address-card"></i> Guardar Contacto</strong>
+          <div class="details">
+            <small>Descargar vCard</small>
+            <small></small> 
+          </div>
+        </span>
       </a>
     </section>
 
